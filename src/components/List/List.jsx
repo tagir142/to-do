@@ -1,40 +1,39 @@
 import { ListWrapper, TasksList } from './List.styles';
 import { Input } from '../Input/Input';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Task } from '../Task/Task';
-import { useSelector } from 'react-redux';
+import { nanoid } from 'nanoid';
 
 export const List = () => {
-  const todos = useSelector((state) => state.todos);
-  const todoList = todos.sortedList;
+  const [tasks, setTasks] = useState([]);
+
+  const addTodo = (text) => {
+    const id = nanoid();
+    const newTask = { id, text };
+
+    setTasks((prev) => [...prev, newTask]);
+  };
 
   useEffect(() => {
-    localStorage.clear();
-    localStorage.setItem('todos', JSON.stringify(todos));
-  });
-  /* useEffect(() => {
-     const json = JSON.stringify(tasks);
-     if (tasks.length > 0) {
-       localStorage.setItem('tasks', json);
-     }
-   }, [tasks]);
+    const json = JSON.stringify(tasks);
+    if (tasks.length > 0) {
+      localStorage.setItem('tasks', json);
+    }
+  }, [tasks]);
 
-   const [loaded, setLoaded] = useState(false);
-   useEffect(() => {
-     const jsonParse = localStorage.getItem('tasks');
-     const savedTasks = JSON.parse(jsonParse);
-     if (savedTasks) {
-       setTasks(savedTasks);
-       setLoaded(true);
-     }
-   }, [loaded]);
- */
+  useEffect(() => {
+    const jsonParse = localStorage.getItem('tasks');
+    const savedTasks = JSON.parse(jsonParse);
+    if (savedTasks) {
+      setTasks(savedTasks);
+    }
+  });
+
   return (
     <ListWrapper>
-      <Input />
-
+      <Input addTodo={addTodo} />
       <TasksList>
-        {todoList.map((item) => (
+        {tasks.map((item) => (
           <Task task={item} key={item.id} />
         ))}
       </TasksList>
