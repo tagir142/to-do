@@ -18,7 +18,7 @@ export const Task = ({ task }) => {
 
   return (
     <TaskWrapper>
-      <DateBlock date={task.date}></DateBlock>
+      <DateBlock date={task.date}>{}</DateBlock>
       <TaskText>{task.text}</TaskText>
     </TaskWrapper>
   );

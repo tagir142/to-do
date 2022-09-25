@@ -5,4 +5,6 @@ export const StyledTitle = styled.h1`
   font-weight: 700;
   font-size: 3rem;
   text-align: center;
+  text-shadow: 1px 1px 2px black;
+  color: darkred;
 `;
