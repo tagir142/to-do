@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
-export const TaskText = styled.div`
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
-  text-align: center;
-`;
-export const TaskWrapper = styled.div`
+export const TaskBlock = styled.div`
   display: flex;
   flex-direction: column;
 

@@ -5,6 +5,7 @@ export const Date = styled.p`
   margin: 15px 0 5px 15px;
   width: auto;
   text-shadow: 1px 1px 2px black;
+  font-size: 1.5rem;
 `;
 export const Block = styled.div`
   display: flex;

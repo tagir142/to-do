@@ -6,3 +6,10 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+export const TaskText = styled.h3`
+  //text-decoration: ${(props) => props.Completed && 'line-through'};
+  word-break: break-word;
+  white-space: pre-line;
+  hyphens: auto;
+  font-size: 1.5rem;
+`;

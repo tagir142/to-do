@@ -17,7 +17,6 @@ export const Input = () => {
   const handleSubmit = (e) => {
     if (e.key === 'Enter') {
       addTodoInList();
-      console.log(text);
     }
   };
 

@@ -1,5 +1,7 @@
-import { TaskText, TaskWrapper } from './Task.styles';
+import { TaskBlock } from './Task.styles';
+
 import { DateBlock } from '../DateBlock/DateBlock';
+import { TaskWrapper } from '../TaskWrapper/TaskWrapper';
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 
@@ -17,9 +19,9 @@ export const Task = ({ task }) => {
   }; */
 
   return (
-    <TaskWrapper>
-      <DateBlock date={task.date}>{}</DateBlock>
-      <TaskText>{task.text}</TaskText>
-    </TaskWrapper>
+    <TaskBlock>
+      <DateBlock task={task}>{}</DateBlock>
+      <TaskWrapper task={task}> </TaskWrapper>
+    </TaskBlock>
   );
 };
