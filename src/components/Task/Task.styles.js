@@ -1,5 +1,9 @@
 import styled from 'styled-components';
+import { MyButton } from '../List/List.styles';
 
+export const DeleteButton = styled(MyButton)`
+  margin: 30px auto 30px 10px;
+`;
 export const TaskBlock = styled.div`
   display: flex;
   flex-direction: column;

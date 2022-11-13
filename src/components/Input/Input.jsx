@@ -1,6 +1,11 @@
-import { AddButton, InputBlock, StyledInput } from './Input.styles';
+import {
+  AddButton,
+  InputBlock,
+  StyledInput,
+  DeleteAllButton
+} from './Input.styles';
 import { useState } from 'react';
-import { addTask } from '../../store/todo/actions';
+import { addTask, removeAllTask } from '../../store/todo/actions';
 import { useDispatch } from 'react-redux';
 
 export const Input = () => {
@@ -12,6 +17,10 @@ export const Input = () => {
       dispatch(addTask(text));
       setText('');
     }
+  };
+
+  const deleteAll = () => {
+    dispatch(removeAllTask());
   };
 
   const handleSubmit = (e) => {
@@ -31,6 +40,9 @@ export const Input = () => {
       <AddButton onClick={addTodoInList}>
         <h3>+</h3>
       </AddButton>
+      <DeleteAllButton onClick={deleteAll}>
+        <h3>Удалить всё</h3>
+      </DeleteAllButton>
     </InputBlock>
   );
 };

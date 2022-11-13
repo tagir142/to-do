@@ -42,7 +42,7 @@ export const todoReducer = (state = getInitialState(), action) => {
         isCompleted: false,
         change: false
       };
-      const addValue = [...state.todoList, todo];
+      const addValue = [todo, ...state.todoList];
       return {
         ...state,
         todoList: addValue,

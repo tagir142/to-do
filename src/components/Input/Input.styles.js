@@ -10,7 +10,9 @@ export const StyledInput = styled.input`
   box-shadow: 0 0 10px 5px black;
   outline: none;
 `;
-
+export const DeleteAllButton = styled(MyButton)`
+  margin: 30px auto 30px 10px;
+`;
 export const InputBlock = styled.div`
   display: flex;
 `;
